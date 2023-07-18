@@ -7,6 +7,8 @@ import datetime
 class Laboratorio(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255, verbose_name='nombre')
+    ciudad = models.CharField(max_length=255, verbose_name='ciudad', default='Default')
+    pais = models.CharField(max_length=255, verbose_name='pais', default='Chile')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de Actualización')
 
@@ -23,6 +25,7 @@ class DirectorGeneral(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255, verbose_name='nombre')
     laboratorio = models.OneToOneField('Laboratorio', on_delete=models.CASCADE)
+    especialidad = models.CharField(max_length=255, verbose_name='especialidad', default='General')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de Actualización')
 
