@@ -1,0 +1,49 @@
+Antes de iniciar las consultas se ingresa a la shell con el siguiente comando.
+Consulta: 
+>> python manage.py shell 
+
+Luego se importan los modelos que se desean consultar.
+Consulta:
+>> from laboratorio.models import Laboratorio, DirectorGeneral, Producto
+---------------------------------------------------------------------------------------------
+1. Obtenga todos los objetos tanto Laboratorio, DirectorGeneral y Productos.
+
+Para los objetos de Laboratorio:
+Consultas: 
+>> laboratorios = Laboratorio.objects.all()
+>> for laboratorio in laboratorios:
+...:    print(laboratorio)
+
+Para los objetos de DirectorGeneral:
+Consultas:
+>> directores_generales = DirectorGeneral.objects.all()
+>> for director_general in directores_generales:
+...:    print(director_general)
+
+Para los objetos de Producto:
+Consultas:
+>> productos = Producto.objects.all()
+>> for producto in productos:
+...:    print(producto)
+
+---------------------------------------------------------------------------------------------
+2. Obtenga el laboratorio del Producto cuyo nombre es 'Producto 1'.
+Consultas:
+>> producto1 = Producto.objects.get(nombre='Producto 1')
+>> laboratorio_producto = producto1.laboratorio
+>> print(laboratorio_producto)
+
+---------------------------------------------------------------------------------------------
+3. Ordene todos los productos por nombre, y que muestre los valores de nombre y laboratorio.
+Consultas: 
+>> productos_ordenados = Producto.objects.order_by('nombre')
+>> for producto in productos_ordenados:
+...:    print(f"Nombre: {producto.nombre}, Laboratorio: {producto.laboratorio})
+
+---------------------------------------------------------------------------------------------
+4. Realice una consulta que imprima por pantalla los laboratorios de todos los productos.
+Consultas: 
+>> productos_laboratorios = Producto.objects.all()
+>> for producto in productos_laboratorios:
+...:    print(f"Producto: {producto.nombre}, Laboratorio: {producto.laboratorio.nombre}")
+
