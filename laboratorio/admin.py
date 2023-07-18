@@ -3,12 +3,12 @@ from .models import Laboratorio, DirectorGeneral, Producto
 # Register your models here.
 
 class LaboratorioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nombre')
+    list_display = ('id', 'nombre', 'ciudad', 'pais')
     list_display_links = ['nombre']
     ordering = ('id',)
 
 class DirectorGeneralAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nombre', 'laboratorio')
+    list_display = ('id', 'nombre', 'laboratorio', 'especialidad')
     list_display_links = ['nombre', 'laboratorio']
     ordering = ('nombre',)
 
