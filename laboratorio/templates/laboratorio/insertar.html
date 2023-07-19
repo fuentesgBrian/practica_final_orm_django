@@ -1,0 +1,23 @@
+{% extends 'laboratorio/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-6">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+                <input type="submit" value="Agregar" class="btn btn-primary mt-3 d-block mx-auto">
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-6 text-center">
+            ¿Información de los Laboratorios?<br>
+            <a href="{% url 'mostrar_lab' %}">Ir a información de los laboratorios--></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
