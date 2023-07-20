@@ -1,7 +1,7 @@
 {% extends 'laboratorio/base.html' %}
 {% block content %}
 
-<h1 style="text-align: center;">Informacion de Laboratorios</h1>
+<h2 style="text-align: center; margin-bottom: 20px; margin-top: 20px">Información de Laboratorios</h2>
 <table class="table">
     <thead>
       <tr>
@@ -24,9 +24,12 @@
         {% endfor %}
     </tbody>
 </table>
-<p>¿Información de los Laboratorios?</p>
-<a href="{% url 'insertar_lab' %}"><-- Ir a la pagina de Inicio</a>
-<p>Usted ha visitado esta pagina {{num_visitas}}</p>
 
-
+<div class="row justify-content-center mt-3">
+  <div class="col-6 text-center">
+    <p>¿Información de los Laboratorios?</p>
+    <a href="{% url 'insertar_lab' %}"><-- Ir a la pagina de Inicio</a>
+    <p>Usted ha visitado esta pagina {{num_visitas}}</p>
+  </div>
+</div>  
 {% endblock content %}
