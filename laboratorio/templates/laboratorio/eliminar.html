@@ -7,8 +7,10 @@
     <div class="row justify-content-center mt-3">
         <div class="col-6 text-center">
             <div class="alert" style="border-color: rgb(88, 88, 88);" role="alert">Estas seguro que deseas eliminar al "{{laboratorio.nombre}}"?
-                <p><a href="{% url 'mostrar_lab' %}"><-- Retornar</a></p>
-                <p><input class="btn btn-danger" type="submit" value="Confirm"></p>
+                <p class="mt-3">
+                    <input class="btn btn-primary" type="submit" value="Confirmar">
+                    <input class="btn btn-danger" href="{% url 'mostrar_lab' %}"  type="submit" value="Retornar">
+                </p>
             </div>
         </div>
     </div>   
